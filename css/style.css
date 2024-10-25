@@ -1,3 +1,16 @@
+/* Defining default colors for dark mode */
+:root {
+  --bg-color-top: #232430;
+  --bg-color-mid: #2e3242;
+  --bg-color-bot: #474b62;
+  --bg-color: #EDEDED;
+  --text-color: white;
+  --contrast-color: #dde45b;
+  --card-label: #07267b;
+  --card-text: #19191f;
+  --card-color: #616479;
+}
+
 /* General styling */
 * {
   margin: 0;
@@ -6,14 +19,14 @@
 }
 
 html {
-  background: linear-gradient(to bottom, #232430, #2e3242 50%, #474b62 75%);
+  background: linear-gradient(to bottom, var(--bg-color-top), var(--bg-color-mid) 50%, var(--bg-color-bot) 75%);
 }
 
 /* Default text styling */
 body {
   font-family: Verdana, Geneva, Tahoma, sans-serif;
   font-weight: 100;
-  color: white;
+  color: var(--text-color);
   line-height: 1.5;
   margin: 0;
   padding: 0;
@@ -27,7 +40,7 @@ body {
 /* Header */
 /* Sticky header for event name and date */
 header {
-  background-color: #EDEDED;
+  background-color: var(--bg-color);
   padding: 8px 20px;
   width: 100%;
   position: sticky;
@@ -37,12 +50,12 @@ header {
 header h1 a {
   font-size: clamp(25px, 4vw, 30px);
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-  color:#232430;
+  color:var(--bg-color-top);
 }
 
 header h2 {
   font-size: 1.2rem;
-  color: #2e3242;
+  color: var(--bg-color-mid);
 }
 
 h2 {
@@ -67,7 +80,7 @@ nav ul {
 }
 
 nav ul li a {
-  color: #EDEDED;
+  color: var(--bg-color);
   font-weight: bold;
   text-decoration: none;
   text-transform: uppercase;
@@ -76,12 +89,12 @@ nav ul li a {
 }
 
 nav ul li a:hover {
-  border: 2px solid #EDEDED;
+  border: 2px solid var(--bg-color);
 }
 
 /* Skip to Content */
 #skip-link {
-  color:#EDEDED;
+  color:var(--bg-color);
   display:inline-block;
   margin: 10px 0px 0px 10px;
 }
@@ -107,28 +120,34 @@ table {
   width: 100%;
   border-collapse: collapse;
   margin-bottom: 40px;
-  background-color: #474b62;
+  background-color: var(--bg-color-bot);
 }
 
 th, td {
   padding: 15px;
   text-align: left;
-  border-bottom: 1px solid #EDEDED;
+  border-bottom: 1px solid var(--bg-color);
 }
 
 th {
-  background-color: #EDEDED;
-  color:#232430;
+  background-color: var(--bg-color);
+  color:var(--bg-color-top);
 }
 
 /* Alternating row colors */
 tr:nth-child(even) {
-  background-color: #2e3242;
+  background-color: var(--bg-color-mid);
 }
 
 tr:hover {
-  background-color: #EDEDED;
-  color:#19191f;
+  background-color: var(--bg-color);
+  color:var(--card-text);
+}
+
+/* Mobile Touch */
+tr:active {
+  background-color: var(--bg-color);
+  color:var(--card-text);
 }
 
 /* Individual Results */
@@ -141,7 +160,7 @@ p .athlete {
 /* athelete cards */
 .athlete {
   display: inline-grid;
-  background-color: #616479;
+  background-color: var(--card-color);
   border-radius: 10px;
   align-items: center;
   gap: 20px;
@@ -152,7 +171,7 @@ p .athlete {
 .athlete figcaption {
   text-transform: uppercase;
   text-align: center;
-  color:white;
+  color: var(--text-color);
   font-weight: bold;
   padding-top: 10px;
 }
@@ -166,14 +185,14 @@ p .athlete {
 
 .athlete dt {
   font-weight: bold;
-  color: #dde45b;
+  color: var(--contrast-color);
   grid-column: 1; 
   margin-left: 10px;
 }
 
 .athlete dd {
   margin-left: 15px;
-  color: white;
+  color: var(--text-color);
   grid-column: 2;
 }
 
@@ -183,19 +202,19 @@ p .athlete {
 }
 
 .athlete:hover {
-  background: #EDEDED;
+  background: var(--bg-color);
 }
 
 .athlete:hover dt {
-  color: #07267b;
+  color: var(--card-label);
 }
 
 .athlete:hover dd {
-  color: #19191f;
+  color: var(--card-text)
 }
 
 .athlete:hover figcaption {
-  color:#19191f;
+  color:var(--card-text);
 }
 
 .athlete:hover img {
@@ -204,19 +223,19 @@ p .athlete {
 
 /* Same animation but for touch */
 .athlete:active {
-  background: #EDEDED;
+  background: var(--bg-color);
 }
 
 .athlete:active dt {
-  color: #07267b;
+  color: var(--card-label);
 }
 
 .athlete:active dd {
-  color: #19191f;
+  color: var(--card-text);
 }
 
 .athlete:active figcaption {
-  color:#19191f;
+  color:var(--card-text);
 }
 
 .athlete:active img {
@@ -242,8 +261,8 @@ p .athlete {
 
 /* Gallery */
 summary {
-  background-color: #EDEDED;
-  color: #232430;
+  background-color: var(--bg-color);
+  color: var(--bg-color-top);
   padding: 10px;
   cursor: pointer;
   border-radius: 4px;
@@ -297,16 +316,30 @@ details[open] > summary::before {
 
 /* Footer */
 footer {
-  background-color:#232430;
+  background-color:var(--bg-color-top);
   text-align: center;
   padding: 20px;
 }
 
 footer a {
   text-decoration: none;
-  color:#dde45b;
+  color:var(--contrast-color);
 }
 
 footer a:hover {
   text-decoration: underline;
+}
+
+@media (prefers-color-scheme: light) {
+  :root {
+    --bg-color-top: #ffffff;
+    --bg-color-mid: #dddfe9;
+    --bg-color-bot: #c8ccda;
+    --bg-color: #2d2f38;
+    --text-color: black;
+    --contrast-color: #231788;
+    --card-label: #ffffff;
+    --card-text: white;
+    --card-color: rgb(209, 209, 223);
+  }
 }
