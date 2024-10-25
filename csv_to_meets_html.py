@@ -28,12 +28,12 @@ def csv_to_html(csv_filename, output_folder):
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>{link_text}</title>
 <link rel="stylesheet" href="../css/reset.css">
 <link rel="stylesheet" href="../css/style.css">
+<title>{link_text}</title>
 </head>
    <body>
-   <a href = "#main">Skip to Main Content</a>
+   <a id="skip-link" href = "#main">Skip to Main Content</a>
    <nav>
      <ul>
         <li><a href="index.html">Home Page</a></li>
@@ -107,14 +107,18 @@ def csv_to_html(csv_filename, output_folder):
 """
 
         html_content += """</section>\n
-        <section id = "gallery">
         <h2>Gallery</h2>
+        <details>
+            <summary>Click to Expand Gallergy</summary>
+            <section id = "gallery">
         """
+        
 
         html_content += create_meet_image_gallery(url)
         # Close the HTML document
         html_content += """
    </section>
+   </details>
    </main>   
    <footer>
                      <p>
