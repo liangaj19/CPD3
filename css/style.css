@@ -48,7 +48,7 @@ header {
 }
 
 header h1 a {
-  font-size: clamp(25px, 4vw, 30px);
+  font-size: clamp(22px, 4vw, 30px);
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
   color:var(--bg-color-top);
 }
