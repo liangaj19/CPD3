@@ -262,6 +262,9 @@ p .athlete {
   .athlete:hover {
     animation: none;
   }
+  .athlete:active {
+    animation: none;
+  }
 }
 
 /* Gallery */
